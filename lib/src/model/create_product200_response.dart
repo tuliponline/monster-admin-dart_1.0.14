@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:built_value/json_object.dart';
 import 'package:monster_fishing_admin/src/model/types_create_product_response.dart';
 import 'package:monster_fishing_admin/src/model/result_response_success.dart';
 import 'package:built_value/built_value.dart';
@@ -13,25 +14,35 @@ part 'create_product200_response.g.dart';
 /// CreateProduct200Response
 ///
 /// Properties:
-/// * [code] 
-/// * [data] 
-/// * [msg] 
+/// * [code]
+/// * [data]
+/// * [msg]
 @BuiltValue()
-abstract class CreateProduct200Response implements ResultResponseSuccess, Built<CreateProduct200Response, CreateProduct200ResponseBuilder> {
+abstract class CreateProduct200Response
+    implements
+        ResultResponseSuccess,
+        Built<CreateProduct200Response, CreateProduct200ResponseBuilder> {
   CreateProduct200Response._();
 
-  factory CreateProduct200Response([void updates(CreateProduct200ResponseBuilder b)]) = _$CreateProduct200Response;
+  factory CreateProduct200Response(
+          [void updates(CreateProduct200ResponseBuilder b)]) =
+      _$CreateProduct200Response;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CreateProduct200ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<CreateProduct200Response> get serializer => _$CreateProduct200ResponseSerializer();
+  static Serializer<CreateProduct200Response> get serializer =>
+      _$CreateProduct200ResponseSerializer();
 }
 
-class _$CreateProduct200ResponseSerializer implements PrimitiveSerializer<CreateProduct200Response> {
+class _$CreateProduct200ResponseSerializer
+    implements PrimitiveSerializer<CreateProduct200Response> {
   @override
-  final Iterable<Type> types = const [CreateProduct200Response, _$CreateProduct200Response];
+  final Iterable<Type> types = const [
+    CreateProduct200Response,
+    _$CreateProduct200Response
+  ];
 
   @override
   final String wireName = r'CreateProduct200Response';
@@ -70,7 +81,9 @@ class _$CreateProduct200ResponseSerializer implements PrimitiveSerializer<Create
     CreateProduct200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -135,4 +148,3 @@ class _$CreateProduct200ResponseSerializer implements PrimitiveSerializer<Create
     return result.build();
   }
 }
-

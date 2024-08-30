@@ -7,31 +7,42 @@ import 'package:monster_fishing_admin/src/model/types_get_category_by_id_respons
 import 'package:monster_fishing_admin/src/model/result_response_success.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'get_category_by_id200_response.g.dart';
 
 /// GetCategoryById200Response
 ///
 /// Properties:
-/// * [code] 
-/// * [data] 
-/// * [msg] 
+/// * [code]
+/// * [data]
+/// * [msg]
 @BuiltValue()
-abstract class GetCategoryById200Response implements ResultResponseSuccess, Built<GetCategoryById200Response, GetCategoryById200ResponseBuilder> {
+abstract class GetCategoryById200Response
+    implements
+        ResultResponseSuccess,
+        Built<GetCategoryById200Response, GetCategoryById200ResponseBuilder> {
   GetCategoryById200Response._();
 
-  factory GetCategoryById200Response([void updates(GetCategoryById200ResponseBuilder b)]) = _$GetCategoryById200Response;
+  factory GetCategoryById200Response(
+          [void updates(GetCategoryById200ResponseBuilder b)]) =
+      _$GetCategoryById200Response;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(GetCategoryById200ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<GetCategoryById200Response> get serializer => _$GetCategoryById200ResponseSerializer();
+  static Serializer<GetCategoryById200Response> get serializer =>
+      _$GetCategoryById200ResponseSerializer();
 }
 
-class _$GetCategoryById200ResponseSerializer implements PrimitiveSerializer<GetCategoryById200Response> {
+class _$GetCategoryById200ResponseSerializer
+    implements PrimitiveSerializer<GetCategoryById200Response> {
   @override
-  final Iterable<Type> types = const [GetCategoryById200Response, _$GetCategoryById200Response];
+  final Iterable<Type> types = const [
+    GetCategoryById200Response,
+    _$GetCategoryById200Response
+  ];
 
   @override
   final String wireName = r'GetCategoryById200Response';
@@ -70,7 +81,9 @@ class _$GetCategoryById200ResponseSerializer implements PrimitiveSerializer<GetC
     GetCategoryById200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -135,4 +148,3 @@ class _$GetCategoryById200ResponseSerializer implements PrimitiveSerializer<GetC
     return result.build();
   }
 }
-

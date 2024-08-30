@@ -7,31 +7,42 @@ import 'package:monster_fishing_admin/src/model/types_get_positions_response.dar
 import 'package:monster_fishing_admin/src/model/result_response_success.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'get_positions200_response.g.dart';
 
 /// GetPositions200Response
 ///
 /// Properties:
-/// * [code] 
-/// * [data] 
-/// * [msg] 
+/// * [code]
+/// * [data]
+/// * [msg]
 @BuiltValue()
-abstract class GetPositions200Response implements ResultResponseSuccess, Built<GetPositions200Response, GetPositions200ResponseBuilder> {
+abstract class GetPositions200Response
+    implements
+        ResultResponseSuccess,
+        Built<GetPositions200Response, GetPositions200ResponseBuilder> {
   GetPositions200Response._();
 
-  factory GetPositions200Response([void updates(GetPositions200ResponseBuilder b)]) = _$GetPositions200Response;
+  factory GetPositions200Response(
+          [void updates(GetPositions200ResponseBuilder b)]) =
+      _$GetPositions200Response;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(GetPositions200ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<GetPositions200Response> get serializer => _$GetPositions200ResponseSerializer();
+  static Serializer<GetPositions200Response> get serializer =>
+      _$GetPositions200ResponseSerializer();
 }
 
-class _$GetPositions200ResponseSerializer implements PrimitiveSerializer<GetPositions200Response> {
+class _$GetPositions200ResponseSerializer
+    implements PrimitiveSerializer<GetPositions200Response> {
   @override
-  final Iterable<Type> types = const [GetPositions200Response, _$GetPositions200Response];
+  final Iterable<Type> types = const [
+    GetPositions200Response,
+    _$GetPositions200Response
+  ];
 
   @override
   final String wireName = r'GetPositions200Response';
@@ -70,7 +81,9 @@ class _$GetPositions200ResponseSerializer implements PrimitiveSerializer<GetPosi
     GetPositions200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -135,4 +148,3 @@ class _$GetPositions200ResponseSerializer implements PrimitiveSerializer<GetPosi
     return result.build();
   }
 }
-

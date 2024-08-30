@@ -7,31 +7,41 @@ import 'package:monster_fishing_admin/src/model/types_get_brands_response.dart';
 import 'package:monster_fishing_admin/src/model/result_response_success.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'get_brands200_response.g.dart';
 
 /// GetBrands200Response
 ///
 /// Properties:
-/// * [code] 
-/// * [data] 
-/// * [msg] 
+/// * [code]
+/// * [data]
+/// * [msg]
 @BuiltValue()
-abstract class GetBrands200Response implements ResultResponseSuccess, Built<GetBrands200Response, GetBrands200ResponseBuilder> {
+abstract class GetBrands200Response
+    implements
+        ResultResponseSuccess,
+        Built<GetBrands200Response, GetBrands200ResponseBuilder> {
   GetBrands200Response._();
 
-  factory GetBrands200Response([void updates(GetBrands200ResponseBuilder b)]) = _$GetBrands200Response;
+  factory GetBrands200Response([void updates(GetBrands200ResponseBuilder b)]) =
+      _$GetBrands200Response;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(GetBrands200ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<GetBrands200Response> get serializer => _$GetBrands200ResponseSerializer();
+  static Serializer<GetBrands200Response> get serializer =>
+      _$GetBrands200ResponseSerializer();
 }
 
-class _$GetBrands200ResponseSerializer implements PrimitiveSerializer<GetBrands200Response> {
+class _$GetBrands200ResponseSerializer
+    implements PrimitiveSerializer<GetBrands200Response> {
   @override
-  final Iterable<Type> types = const [GetBrands200Response, _$GetBrands200Response];
+  final Iterable<Type> types = const [
+    GetBrands200Response,
+    _$GetBrands200Response
+  ];
 
   @override
   final String wireName = r'GetBrands200Response';
@@ -70,7 +80,9 @@ class _$GetBrands200ResponseSerializer implements PrimitiveSerializer<GetBrands2
     GetBrands200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -135,4 +147,3 @@ class _$GetBrands200ResponseSerializer implements PrimitiveSerializer<GetBrands2
     return result.build();
   }
 }
-

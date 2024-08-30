@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:built_value/json_object.dart';
 import 'package:monster_fishing_admin/src/model/types_get_banners_response.dart';
 import 'package:monster_fishing_admin/src/model/result_response_success.dart';
 import 'package:built_value/built_value.dart';
@@ -13,25 +14,34 @@ part 'get_banners200_response.g.dart';
 /// GetBanners200Response
 ///
 /// Properties:
-/// * [code] 
-/// * [data] 
-/// * [msg] 
+/// * [code]
+/// * [data]
+/// * [msg]
 @BuiltValue()
-abstract class GetBanners200Response implements ResultResponseSuccess, Built<GetBanners200Response, GetBanners200ResponseBuilder> {
+abstract class GetBanners200Response
+    implements
+        ResultResponseSuccess,
+        Built<GetBanners200Response, GetBanners200ResponseBuilder> {
   GetBanners200Response._();
 
-  factory GetBanners200Response([void updates(GetBanners200ResponseBuilder b)]) = _$GetBanners200Response;
+  factory GetBanners200Response(
+      [void updates(GetBanners200ResponseBuilder b)]) = _$GetBanners200Response;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(GetBanners200ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<GetBanners200Response> get serializer => _$GetBanners200ResponseSerializer();
+  static Serializer<GetBanners200Response> get serializer =>
+      _$GetBanners200ResponseSerializer();
 }
 
-class _$GetBanners200ResponseSerializer implements PrimitiveSerializer<GetBanners200Response> {
+class _$GetBanners200ResponseSerializer
+    implements PrimitiveSerializer<GetBanners200Response> {
   @override
-  final Iterable<Type> types = const [GetBanners200Response, _$GetBanners200Response];
+  final Iterable<Type> types = const [
+    GetBanners200Response,
+    _$GetBanners200Response
+  ];
 
   @override
   final String wireName = r'GetBanners200Response';
@@ -70,7 +80,9 @@ class _$GetBanners200ResponseSerializer implements PrimitiveSerializer<GetBanner
     GetBanners200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -135,4 +147,3 @@ class _$GetBanners200ResponseSerializer implements PrimitiveSerializer<GetBanner
     return result.build();
   }
 }
-

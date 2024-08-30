@@ -7,31 +7,42 @@ import 'package:monster_fishing_admin/src/model/types_get_product_by_id_response
 import 'package:monster_fishing_admin/src/model/result_response_success.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'get_product_by_id200_response.g.dart';
 
 /// GetProductById200Response
 ///
 /// Properties:
-/// * [code] 
-/// * [data] 
-/// * [msg] 
+/// * [code]
+/// * [data]
+/// * [msg]
 @BuiltValue()
-abstract class GetProductById200Response implements ResultResponseSuccess, Built<GetProductById200Response, GetProductById200ResponseBuilder> {
+abstract class GetProductById200Response
+    implements
+        ResultResponseSuccess,
+        Built<GetProductById200Response, GetProductById200ResponseBuilder> {
   GetProductById200Response._();
 
-  factory GetProductById200Response([void updates(GetProductById200ResponseBuilder b)]) = _$GetProductById200Response;
+  factory GetProductById200Response(
+          [void updates(GetProductById200ResponseBuilder b)]) =
+      _$GetProductById200Response;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(GetProductById200ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<GetProductById200Response> get serializer => _$GetProductById200ResponseSerializer();
+  static Serializer<GetProductById200Response> get serializer =>
+      _$GetProductById200ResponseSerializer();
 }
 
-class _$GetProductById200ResponseSerializer implements PrimitiveSerializer<GetProductById200Response> {
+class _$GetProductById200ResponseSerializer
+    implements PrimitiveSerializer<GetProductById200Response> {
   @override
-  final Iterable<Type> types = const [GetProductById200Response, _$GetProductById200Response];
+  final Iterable<Type> types = const [
+    GetProductById200Response,
+    _$GetProductById200Response
+  ];
 
   @override
   final String wireName = r'GetProductById200Response';
@@ -70,7 +81,9 @@ class _$GetProductById200ResponseSerializer implements PrimitiveSerializer<GetPr
     GetProductById200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -135,4 +148,3 @@ class _$GetProductById200ResponseSerializer implements PrimitiveSerializer<GetPr
     return result.build();
   }
 }
-

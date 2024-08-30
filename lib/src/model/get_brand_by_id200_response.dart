@@ -7,31 +7,42 @@ import 'package:monster_fishing_admin/src/model/types_get_brand_by_id_response.d
 import 'package:monster_fishing_admin/src/model/result_response_success.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'get_brand_by_id200_response.g.dart';
 
 /// GetBrandById200Response
 ///
 /// Properties:
-/// * [code] 
-/// * [data] 
-/// * [msg] 
+/// * [code]
+/// * [data]
+/// * [msg]
 @BuiltValue()
-abstract class GetBrandById200Response implements ResultResponseSuccess, Built<GetBrandById200Response, GetBrandById200ResponseBuilder> {
+abstract class GetBrandById200Response
+    implements
+        ResultResponseSuccess,
+        Built<GetBrandById200Response, GetBrandById200ResponseBuilder> {
   GetBrandById200Response._();
 
-  factory GetBrandById200Response([void updates(GetBrandById200ResponseBuilder b)]) = _$GetBrandById200Response;
+  factory GetBrandById200Response(
+          [void updates(GetBrandById200ResponseBuilder b)]) =
+      _$GetBrandById200Response;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(GetBrandById200ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<GetBrandById200Response> get serializer => _$GetBrandById200ResponseSerializer();
+  static Serializer<GetBrandById200Response> get serializer =>
+      _$GetBrandById200ResponseSerializer();
 }
 
-class _$GetBrandById200ResponseSerializer implements PrimitiveSerializer<GetBrandById200Response> {
+class _$GetBrandById200ResponseSerializer
+    implements PrimitiveSerializer<GetBrandById200Response> {
   @override
-  final Iterable<Type> types = const [GetBrandById200Response, _$GetBrandById200Response];
+  final Iterable<Type> types = const [
+    GetBrandById200Response,
+    _$GetBrandById200Response
+  ];
 
   @override
   final String wireName = r'GetBrandById200Response';
@@ -70,7 +81,9 @@ class _$GetBrandById200ResponseSerializer implements PrimitiveSerializer<GetBran
     GetBrandById200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -135,4 +148,3 @@ class _$GetBrandById200ResponseSerializer implements PrimitiveSerializer<GetBran
     return result.build();
   }
 }
-

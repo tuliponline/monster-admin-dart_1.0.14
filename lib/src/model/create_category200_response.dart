@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:built_value/json_object.dart';
 import 'package:monster_fishing_admin/src/model/result_response_success.dart';
 import 'package:monster_fishing_admin/src/model/types_create_category_response.dart';
 import 'package:built_value/built_value.dart';
@@ -13,25 +14,35 @@ part 'create_category200_response.g.dart';
 /// CreateCategory200Response
 ///
 /// Properties:
-/// * [code] 
-/// * [data] 
-/// * [msg] 
+/// * [code]
+/// * [data]
+/// * [msg]
 @BuiltValue()
-abstract class CreateCategory200Response implements ResultResponseSuccess, Built<CreateCategory200Response, CreateCategory200ResponseBuilder> {
+abstract class CreateCategory200Response
+    implements
+        ResultResponseSuccess,
+        Built<CreateCategory200Response, CreateCategory200ResponseBuilder> {
   CreateCategory200Response._();
 
-  factory CreateCategory200Response([void updates(CreateCategory200ResponseBuilder b)]) = _$CreateCategory200Response;
+  factory CreateCategory200Response(
+          [void updates(CreateCategory200ResponseBuilder b)]) =
+      _$CreateCategory200Response;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CreateCategory200ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<CreateCategory200Response> get serializer => _$CreateCategory200ResponseSerializer();
+  static Serializer<CreateCategory200Response> get serializer =>
+      _$CreateCategory200ResponseSerializer();
 }
 
-class _$CreateCategory200ResponseSerializer implements PrimitiveSerializer<CreateCategory200Response> {
+class _$CreateCategory200ResponseSerializer
+    implements PrimitiveSerializer<CreateCategory200Response> {
   @override
-  final Iterable<Type> types = const [CreateCategory200Response, _$CreateCategory200Response];
+  final Iterable<Type> types = const [
+    CreateCategory200Response,
+    _$CreateCategory200Response
+  ];
 
   @override
   final String wireName = r'CreateCategory200Response';
@@ -70,7 +81,9 @@ class _$CreateCategory200ResponseSerializer implements PrimitiveSerializer<Creat
     CreateCategory200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -135,4 +148,3 @@ class _$CreateCategory200ResponseSerializer implements PrimitiveSerializer<Creat
     return result.build();
   }
 }
-

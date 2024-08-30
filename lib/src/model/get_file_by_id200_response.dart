@@ -7,31 +7,42 @@ import 'package:monster_fishing_admin/src/model/result_response_success.dart';
 import 'package:monster_fishing_admin/src/model/types_get_file_by_id_response.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'get_file_by_id200_response.g.dart';
 
 /// GetFileById200Response
 ///
 /// Properties:
-/// * [code] 
-/// * [data] 
-/// * [msg] 
+/// * [code]
+/// * [data]
+/// * [msg]
 @BuiltValue()
-abstract class GetFileById200Response implements ResultResponseSuccess, Built<GetFileById200Response, GetFileById200ResponseBuilder> {
+abstract class GetFileById200Response
+    implements
+        ResultResponseSuccess,
+        Built<GetFileById200Response, GetFileById200ResponseBuilder> {
   GetFileById200Response._();
 
-  factory GetFileById200Response([void updates(GetFileById200ResponseBuilder b)]) = _$GetFileById200Response;
+  factory GetFileById200Response(
+          [void updates(GetFileById200ResponseBuilder b)]) =
+      _$GetFileById200Response;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(GetFileById200ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<GetFileById200Response> get serializer => _$GetFileById200ResponseSerializer();
+  static Serializer<GetFileById200Response> get serializer =>
+      _$GetFileById200ResponseSerializer();
 }
 
-class _$GetFileById200ResponseSerializer implements PrimitiveSerializer<GetFileById200Response> {
+class _$GetFileById200ResponseSerializer
+    implements PrimitiveSerializer<GetFileById200Response> {
   @override
-  final Iterable<Type> types = const [GetFileById200Response, _$GetFileById200Response];
+  final Iterable<Type> types = const [
+    GetFileById200Response,
+    _$GetFileById200Response
+  ];
 
   @override
   final String wireName = r'GetFileById200Response';
@@ -70,7 +81,9 @@ class _$GetFileById200ResponseSerializer implements PrimitiveSerializer<GetFileB
     GetFileById200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -135,4 +148,3 @@ class _$GetFileById200ResponseSerializer implements PrimitiveSerializer<GetFileB
     return result.build();
   }
 }
-

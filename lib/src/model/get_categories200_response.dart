@@ -7,31 +7,42 @@ import 'package:monster_fishing_admin/src/model/types_get_categories_response.da
 import 'package:monster_fishing_admin/src/model/result_response_success.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'get_categories200_response.g.dart';
 
 /// GetCategories200Response
 ///
 /// Properties:
-/// * [code] 
-/// * [data] 
-/// * [msg] 
+/// * [code]
+/// * [data]
+/// * [msg]
 @BuiltValue()
-abstract class GetCategories200Response implements ResultResponseSuccess, Built<GetCategories200Response, GetCategories200ResponseBuilder> {
+abstract class GetCategories200Response
+    implements
+        ResultResponseSuccess,
+        Built<GetCategories200Response, GetCategories200ResponseBuilder> {
   GetCategories200Response._();
 
-  factory GetCategories200Response([void updates(GetCategories200ResponseBuilder b)]) = _$GetCategories200Response;
+  factory GetCategories200Response(
+          [void updates(GetCategories200ResponseBuilder b)]) =
+      _$GetCategories200Response;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(GetCategories200ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<GetCategories200Response> get serializer => _$GetCategories200ResponseSerializer();
+  static Serializer<GetCategories200Response> get serializer =>
+      _$GetCategories200ResponseSerializer();
 }
 
-class _$GetCategories200ResponseSerializer implements PrimitiveSerializer<GetCategories200Response> {
+class _$GetCategories200ResponseSerializer
+    implements PrimitiveSerializer<GetCategories200Response> {
   @override
-  final Iterable<Type> types = const [GetCategories200Response, _$GetCategories200Response];
+  final Iterable<Type> types = const [
+    GetCategories200Response,
+    _$GetCategories200Response
+  ];
 
   @override
   final String wireName = r'GetCategories200Response';
@@ -70,7 +81,9 @@ class _$GetCategories200ResponseSerializer implements PrimitiveSerializer<GetCat
     GetCategories200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -135,4 +148,3 @@ class _$GetCategories200ResponseSerializer implements PrimitiveSerializer<GetCat
     return result.build();
   }
 }
-
