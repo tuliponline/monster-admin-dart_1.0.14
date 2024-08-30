@@ -1,0 +1,21 @@
+import 'package:test/test.dart';
+import 'package:monster_fishing_admin/monster_fishing_admin.dart';
+
+// tests for TypesGetPositionsResponse
+void main() {
+  final instance = TypesGetPositionsResponseBuilder();
+  // TODO add properties to the builder and call build()
+
+  group(TypesGetPositionsResponse, () {
+    // BuiltList<TypesPosition> items
+    test('to test the property `items`', () async {
+      // TODO
+    });
+
+    // TypesMeta meta
+    test('to test the property `meta`', () async {
+      // TODO
+    });
+
+  });
+}

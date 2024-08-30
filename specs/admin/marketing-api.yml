@@ -1,0 +1,374 @@
+openapi: 3.0.0
+info:
+  title: API
+  contact:
+    name: API Support
+  version: "1.0"
+paths:
+  /v1/banners:
+    get:
+      tags:
+        - Banner
+      operationId: GetBanners
+      parameters:
+        - name: filters
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+        - name: order_by
+          in: query
+          schema:
+            type: string
+        - name: page
+          in: query
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/result.ResponseSuccess"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/types.GetBannersResponse"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+    delete:
+      tags:
+        - Banner
+      operationId: CreateBanner
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/types.CreateBannerRequest"
+        description: " "
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/result.ResponseSuccess"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/types.DeleteBannerResponse"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+  "/v1/banners/{id}":
+    get:
+      tags:
+        - Banner
+      operationId: GetBannerById
+      parameters:
+        - description: " "
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/result.ResponseSuccess"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/types.GetBannerByIdResponse"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+    delete:
+      tags:
+        - Banner
+      operationId: DeleteBanner
+      parameters:
+        - description: " "
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/result.ResponseSuccess"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/types.DeleteBannerResponse"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+    patch:
+      tags:
+        - Banner
+      operationId: UpdateBanner
+      parameters:
+        - description: " "
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/types.UpdateBannerRequest"
+        description: " "
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/result.ResponseSuccess"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/types.UpdateBannerResponse"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+  /v1/positions:
+    get:
+      tags:
+        - Position
+      operationId: GetPositions
+      parameters:
+        - name: filters
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+        - name: order_by
+          in: query
+          schema:
+            type: string
+        - name: page
+          in: query
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/result.ResponseSuccess"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/types.GetPositionsResponse"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+components:
+  schemas:
+    result.ResponseError:
+      type: object
+      properties:
+        code:
+          type: string
+        msg:
+          type: string
+    result.ResponseSuccess:
+      type: object
+      properties:
+        code:
+          type: string
+        data: {}
+        msg:
+          type: string
+    types.Banner:
+      type: object
+      properties:
+        created_at:
+          type: string
+        id:
+          type: string
+        image:
+          type: string
+        position:
+          type: string
+        sequence:
+          type: integer
+        updated_at:
+          type: string
+        url:
+          type: string
+    types.CreateBannerRequest:
+      type: object
+      properties:
+        image:
+          type: string
+        position:
+          type: string
+        sequence:
+          type: integer
+        url:
+          type: string
+    types.DeleteBannerResponse:
+      type: object
+    types.GetBannerByIdResponse:
+      type: object
+      properties:
+        created_at:
+          type: string
+        id:
+          type: string
+        image:
+          type: string
+        position:
+          type: string
+        sequence:
+          type: integer
+        updated_at:
+          type: string
+        url:
+          type: string
+    types.GetBannersResponse:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/types.Banner"
+        meta:
+          $ref: "#/components/schemas/types.Meta"
+    types.GetPositionsResponse:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/types.Position"
+        meta:
+          $ref: "#/components/schemas/types.Meta"
+    types.Meta:
+      type: object
+      properties:
+        item_count:
+          type: integer
+        limit:
+          type: integer
+        page:
+          type: integer
+        total_items:
+          type: integer
+        total_pages:
+          type: integer
+    types.Position:
+      type: object
+      properties:
+        created_at:
+          type: string
+        height:
+          type: integer
+        id:
+          type: string
+        name:
+          type: string
+        updated_at:
+          type: string
+        value:
+          type: string
+        width:
+          type: integer
+    types.UpdateBannerRequest:
+      type: object
+      properties:
+        id:
+          type: string
+        image:
+          type: string
+        position:
+          type: string
+        sequence:
+          type: integer
+        url:
+          type: string
+    types.UpdateBannerResponse:
+      type: object

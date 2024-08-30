@@ -1,0 +1,83 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+
+export 'package:monster_fishing_admin/src/api.dart';
+export 'package:monster_fishing_admin/src/auth/api_key_auth.dart';
+export 'package:monster_fishing_admin/src/auth/basic_auth.dart';
+export 'package:monster_fishing_admin/src/auth/bearer_auth.dart';
+export 'package:monster_fishing_admin/src/auth/oauth.dart';
+export 'package:monster_fishing_admin/src/serializers.dart';
+export 'package:monster_fishing_admin/src/model/date.dart';
+
+export 'package:monster_fishing_admin/src/api/banner_api.dart';
+export 'package:monster_fishing_admin/src/api/brand_api.dart';
+export 'package:monster_fishing_admin/src/api/category_api.dart';
+export 'package:monster_fishing_admin/src/api/file_api.dart';
+export 'package:monster_fishing_admin/src/api/position_api.dart';
+export 'package:monster_fishing_admin/src/api/product_api.dart';
+
+export 'package:monster_fishing_admin/src/model/create_banner200_response.dart';
+export 'package:monster_fishing_admin/src/model/create_brand200_response.dart';
+export 'package:monster_fishing_admin/src/model/create_category200_response.dart';
+export 'package:monster_fishing_admin/src/model/create_product200_response.dart';
+export 'package:monster_fishing_admin/src/model/delete_brand200_response.dart';
+export 'package:monster_fishing_admin/src/model/delete_category200_response.dart';
+export 'package:monster_fishing_admin/src/model/delete_file200_response.dart';
+export 'package:monster_fishing_admin/src/model/get_banner_by_id200_response.dart';
+export 'package:monster_fishing_admin/src/model/get_banners200_response.dart';
+export 'package:monster_fishing_admin/src/model/get_brand_by_id200_response.dart';
+export 'package:monster_fishing_admin/src/model/get_brands200_response.dart';
+export 'package:monster_fishing_admin/src/model/get_categories200_response.dart';
+export 'package:monster_fishing_admin/src/model/get_category_by_id200_response.dart';
+export 'package:monster_fishing_admin/src/model/get_file_by_id200_response.dart';
+export 'package:monster_fishing_admin/src/model/get_files200_response.dart';
+export 'package:monster_fishing_admin/src/model/get_positions200_response.dart';
+export 'package:monster_fishing_admin/src/model/get_product_by_id200_response.dart';
+export 'package:monster_fishing_admin/src/model/get_products200_response.dart';
+export 'package:monster_fishing_admin/src/model/result_response_error.dart';
+export 'package:monster_fishing_admin/src/model/result_response_success.dart';
+export 'package:monster_fishing_admin/src/model/sync_product200_response.dart';
+export 'package:monster_fishing_admin/src/model/types_banner.dart';
+export 'package:monster_fishing_admin/src/model/types_brand.dart';
+export 'package:monster_fishing_admin/src/model/types_category.dart';
+export 'package:monster_fishing_admin/src/model/types_create_banner_request.dart';
+export 'package:monster_fishing_admin/src/model/types_create_brand_request.dart';
+export 'package:monster_fishing_admin/src/model/types_create_brand_response.dart';
+export 'package:monster_fishing_admin/src/model/types_create_category_request.dart';
+export 'package:monster_fishing_admin/src/model/types_create_category_response.dart';
+export 'package:monster_fishing_admin/src/model/types_create_product_request.dart';
+export 'package:monster_fishing_admin/src/model/types_create_product_response.dart';
+export 'package:monster_fishing_admin/src/model/types_delete_file_request.dart';
+export 'package:monster_fishing_admin/src/model/types_dimension.dart';
+export 'package:monster_fishing_admin/src/model/types_file.dart';
+export 'package:monster_fishing_admin/src/model/types_get_banner_by_id_response.dart';
+export 'package:monster_fishing_admin/src/model/types_get_banners_response.dart';
+export 'package:monster_fishing_admin/src/model/types_get_brand_by_id_response.dart';
+export 'package:monster_fishing_admin/src/model/types_get_brands_response.dart';
+export 'package:monster_fishing_admin/src/model/types_get_brands_response_meta.dart';
+export 'package:monster_fishing_admin/src/model/types_get_categories_response.dart';
+export 'package:monster_fishing_admin/src/model/types_get_category_by_id_response.dart';
+export 'package:monster_fishing_admin/src/model/types_get_file_by_id_response.dart';
+export 'package:monster_fishing_admin/src/model/types_get_files_response.dart';
+export 'package:monster_fishing_admin/src/model/types_get_positions_response.dart';
+export 'package:monster_fishing_admin/src/model/types_get_product_by_id_response.dart';
+export 'package:monster_fishing_admin/src/model/types_get_products_response.dart';
+export 'package:monster_fishing_admin/src/model/types_meta.dart';
+export 'package:monster_fishing_admin/src/model/types_position.dart';
+export 'package:monster_fishing_admin/src/model/types_product.dart';
+export 'package:monster_fishing_admin/src/model/types_update_banner_request.dart';
+export 'package:monster_fishing_admin/src/model/types_update_brand_request.dart';
+export 'package:monster_fishing_admin/src/model/types_update_category_request.dart';
+export 'package:monster_fishing_admin/src/model/types_update_product_dimension_request.dart';
+export 'package:monster_fishing_admin/src/model/types_update_product_request.dart';
+export 'package:monster_fishing_admin/src/model/types_upload_file_response.dart';
+export 'package:monster_fishing_admin/src/model/types_variation.dart';
+export 'package:monster_fishing_admin/src/model/types_variation_option.dart';
+export 'package:monster_fishing_admin/src/model/update_banner200_response.dart';
+export 'package:monster_fishing_admin/src/model/update_brand200_response.dart';
+export 'package:monster_fishing_admin/src/model/update_category200_response.dart';
+export 'package:monster_fishing_admin/src/model/update_product200_response.dart';
+export 'package:monster_fishing_admin/src/model/update_product_dimension200_response.dart';
+export 'package:monster_fishing_admin/src/model/upload_file200_response.dart';
+

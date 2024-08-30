@@ -1,0 +1,1027 @@
+openapi: 3.0.0
+info:
+  title: API
+  contact:
+    name: API Support
+  version: "1.0"
+paths:
+  /v1/brands:
+    get:
+      tags:
+        - Brand
+      operationId: GetBrands
+      parameters:
+        - name: filters
+          in: query
+          schema:
+            type: string
+        - name: language
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+        - name: order_by
+          in: query
+          schema:
+            type: string
+        - name: page
+          in: query
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/result.ResponseSuccess"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/types.GetBrandsResponse"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+    post:
+      tags:
+        - Brand
+      operationId: CreateBrand
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/types.CreateBrandRequest"
+        description: " "
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/result.ResponseSuccess"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/types.CreateBrandResponse"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+  "/v1/brands/{id}":
+    get:
+      tags:
+        - Brand
+      operationId: GetBrandById
+      parameters:
+        - description: " "
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/result.ResponseSuccess"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/types.GetBrandByIdResponse"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+    delete:
+      tags:
+        - Brand
+      operationId: DeleteBrand
+      parameters:
+        - description: " "
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/result.ResponseSuccess"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/types.DeleteBrandResponse"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+    patch:
+      tags:
+        - Brand
+      operationId: UpdateBrand
+      parameters:
+        - description: " "
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/types.UpdateBrandRequest"
+        description: " "
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/result.ResponseSuccess"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/types.UpdateBrandResponse"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+  /v1/categories:
+    get:
+      tags:
+        - Category
+      operationId: GetCategories
+      parameters:
+        - name: filters
+          in: query
+          schema:
+            type: string
+        - name: language
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+        - name: order_by
+          in: query
+          schema:
+            type: string
+        - name: page
+          in: query
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/result.ResponseSuccess"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/types.GetCategoriesResponse"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+    post:
+      tags:
+        - Category
+      operationId: CreateCategory
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/types.CreateCategoryRequest"
+        description: " "
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/result.ResponseSuccess"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/types.CreateCategoryResponse"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+  "/v1/categories/{id}":
+    get:
+      tags:
+        - Category
+      operationId: GetCategoryById
+      parameters:
+        - description: " "
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/result.ResponseSuccess"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/types.GetCategoryByIdResponse"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+    delete:
+      tags:
+        - Category
+      operationId: DeleteCategory
+      parameters:
+        - description: " "
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/result.ResponseSuccess"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/types.DeleteCategoryResponse"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+    patch:
+      tags:
+        - Category
+      operationId: UpdateCategory
+      parameters:
+        - description: " "
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/types.UpdateCategoryRequest"
+        description: " "
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/result.ResponseSuccess"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/types.UpdateCategoryResponse"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+  /v1/products:
+    get:
+      tags:
+        - Product
+      operationId: GetProducts
+      parameters:
+        - name: filters
+          in: query
+          schema:
+            type: string
+        - name: language
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+        - name: order_by
+          in: query
+          schema:
+            type: string
+        - name: page
+          in: query
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/result.ResponseSuccess"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/types.GetProductsResponse"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+    post:
+      tags:
+        - Product
+      operationId: CreateProduct
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/types.CreateProductRequest"
+        description: " "
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/result.ResponseSuccess"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/types.CreateProductResponse"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+  /v1/products/sync:
+    post:
+      tags:
+        - Product
+      operationId: SyncProduct
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/result.ResponseSuccess"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/types.SyncProductResponse"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+  "/v1/products/{id}":
+    get:
+      tags:
+        - Product
+      operationId: GetProductById
+      parameters:
+        - description: " "
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/result.ResponseSuccess"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/types.GetProductByIdResponse"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+    patch:
+      tags:
+        - Product
+      operationId: UpdateProduct
+      parameters:
+        - description: " "
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/types.UpdateProductRequest"
+        description: " "
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/result.ResponseSuccess"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/types.UpdateProductResponse"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+  "/v1/products/{id}/dimension":
+    patch:
+      tags:
+        - Product
+      operationId: UpdateProductDimension
+      parameters:
+        - description: " "
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/types.UpdateProductDimensionRequest"
+        description: " "
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/result.ResponseSuccess"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/types.UpdateProductDimensionResponse"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+components:
+  schemas:
+    result.ResponseError:
+      type: object
+      properties:
+        code:
+          type: string
+        msg:
+          type: string
+    result.ResponseSuccess:
+      type: object
+      properties:
+        code:
+          type: string
+        data: {}
+        msg:
+          type: string
+    types.Brand:
+      type: object
+      properties:
+        created_at:
+          type: string
+        description:
+          type: string
+        id:
+          type: string
+        image:
+          type: string
+        name:
+          type: string
+        updated_at:
+          type: string
+    types.Category:
+      type: object
+      properties:
+        created_at:
+          type: string
+        description:
+          type: string
+        id:
+          type: string
+        image:
+          type: string
+        name:
+          type: string
+        parent_id:
+          type: string
+        sequence:
+          type: integer
+        updated_at:
+          type: string
+    types.CreateBrandRequest:
+      type: object
+      properties:
+        description:
+          type: string
+        image:
+          type: string
+        language:
+          type: string
+        name:
+          type: string
+    types.CreateBrandResponse:
+      type: object
+      properties:
+        id:
+          type: string
+    types.CreateCategoryRequest:
+      type: object
+      properties:
+        description:
+          type: string
+        image:
+          type: string
+        language:
+          type: string
+        name:
+          type: string
+        parent_id:
+          type: string
+        sequence:
+          type: integer
+    types.CreateCategoryResponse:
+      type: object
+      properties:
+        id:
+          type: string
+    types.CreateProductRequest:
+      type: object
+      properties:
+        language:
+          type: string
+        name:
+          type: string
+        sku:
+          type: string
+    types.CreateProductResponse:
+      type: object
+      properties:
+        id:
+          type: string
+    types.DeleteBrandResponse:
+      type: object
+    types.DeleteCategoryResponse:
+      type: object
+    types.Dimension:
+      type: object
+      properties:
+        height:
+          type: number
+        length:
+          type: number
+        weight:
+          type: number
+        width:
+          type: number
+    types.GetBrandByIdResponse:
+      type: object
+      properties:
+        created_at:
+          type: string
+        description:
+          type: string
+        id:
+          type: string
+        image:
+          type: string
+        name:
+          type: string
+        updated_at:
+          type: string
+    types.GetBrandsResponse:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/types.Brand"
+        meta:
+          type: object
+          properties:
+            item_count:
+              type: integer
+            limit:
+              type: integer
+            page:
+              type: integer
+            total_items:
+              type: integer
+            total_pages:
+              type: integer
+    types.GetCategoriesResponse:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/types.Category"
+        meta:
+          type: object
+          properties:
+            item_count:
+              type: integer
+            limit:
+              type: integer
+            page:
+              type: integer
+            total_items:
+              type: integer
+            total_pages:
+              type: integer
+    types.GetCategoryByIdResponse:
+      type: object
+      properties:
+        created_at:
+          type: string
+        description:
+          type: string
+        id:
+          type: string
+        image:
+          type: string
+        name:
+          type: string
+        parent_id:
+          type: string
+        sequence:
+          type: integer
+        updated_at:
+          type: string
+    types.GetProductByIdResponse:
+      type: object
+      properties:
+        brand:
+          $ref: "#/components/schemas/types.Brand"
+        category:
+          $ref: "#/components/schemas/types.Category"
+        created_at:
+          type: string
+        description:
+          type: string
+        dimension:
+          $ref: "#/components/schemas/types.Dimension"
+        id:
+          type: string
+        images:
+          type: array
+          items:
+            type: string
+        name:
+          type: string
+        short_description:
+          type: string
+        sku:
+          type: string
+        slug:
+          type: string
+        thumbnail:
+          type: string
+        updated_at:
+          type: string
+        variations:
+          type: array
+          items:
+            $ref: "#/components/schemas/types.Variation"
+    types.GetProductsResponse:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/types.Product"
+        meta:
+          type: object
+          properties:
+            item_count:
+              type: integer
+            limit:
+              type: integer
+            page:
+              type: integer
+            total_items:
+              type: integer
+            total_pages:
+              type: integer
+    types.Product:
+      type: object
+      properties:
+        brand:
+          $ref: "#/components/schemas/types.Brand"
+        category:
+          $ref: "#/components/schemas/types.Category"
+        created_at:
+          type: string
+        description:
+          type: string
+        dimension:
+          $ref: "#/components/schemas/types.Dimension"
+        id:
+          type: string
+        images:
+          type: array
+          items:
+            type: string
+        name:
+          type: string
+        short_description:
+          type: string
+        sku:
+          type: string
+        slug:
+          type: string
+        thumbnail:
+          type: string
+        updated_at:
+          type: string
+        variations:
+          type: array
+          items:
+            $ref: "#/components/schemas/types.Variation"
+    types.SyncProductResponse:
+      type: object
+    types.UpdateBrandRequest:
+      type: object
+      properties:
+        description:
+          type: string
+        id:
+          type: string
+        image:
+          type: string
+        language:
+          type: string
+        name:
+          type: string
+    types.UpdateBrandResponse:
+      type: object
+    types.UpdateCategoryRequest:
+      type: object
+      properties:
+        description:
+          type: string
+        id:
+          type: string
+        image:
+          type: string
+        language:
+          type: string
+        name:
+          type: string
+        parent_id:
+          type: string
+        sequence:
+          type: integer
+    types.UpdateCategoryResponse:
+      type: object
+    types.UpdateProductDimensionRequest:
+      type: object
+      properties:
+        height:
+          type: number
+        id:
+          type: string
+        language:
+          type: string
+        length:
+          type: number
+        rollback:
+          type: boolean
+        weight:
+          type: number
+        width:
+          type: number
+    types.UpdateProductDimensionResponse:
+      type: object
+    types.UpdateProductRequest:
+      type: object
+      properties:
+        brand_id:
+          type: string
+        category_id:
+          type: string
+        description:
+          type: string
+        id:
+          type: string
+        language:
+          type: string
+        name.optional:
+          type: string
+        rollback:
+          type: boolean
+        short_description:
+          type: string
+        sku.optional:
+          type: string
+        slug:
+          type: string
+        thumbnail:
+          type: string
+    types.UpdateProductResponse:
+      type: object
+    types.Variation:
+      type: object
+      properties:
+        name:
+          type: string
+        options:
+          type: array
+          items:
+            $ref: "#/components/schemas/types.VariationOption"
+    types.VariationOption:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+        id:
+          type: string
+        images:
+          type: array
+          items:
+            type: string
+        name:
+          type: string
+        option:
+          type: string
+        price:
+          type: number
+        sku:
+          type: string
+        special_price:
+          type: number
+        stock:
+          type: integer

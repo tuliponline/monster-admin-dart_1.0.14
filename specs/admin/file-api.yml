@@ -1,0 +1,267 @@
+openapi: 3.0.0
+info:
+  title: API
+  contact:
+    name: API Support
+  version: "1.0"
+paths:
+  /v1/files:
+    get:
+      tags:
+        - File
+      operationId: GetFiles
+      parameters:
+        - name: filters
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+        - name: order_by
+          in: query
+          schema:
+            type: string
+        - name: page
+          in: query
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/result.ResponseSuccess"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/types.GetFilesResponse"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+    post:
+      tags:
+        - File
+      operationId: UploadFile
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  description: File to upload
+                  type: string
+                  format: binary
+              required:
+                - file
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/result.ResponseSuccess"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/types.UploadFileResponse"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+    delete:
+      tags:
+        - File
+      operationId: DeleteFile
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/types.DeleteFileRequest"
+        description: " "
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/result.ResponseSuccess"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/types.DeleteFileResponse"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+  "/v1/files/{id}":
+    get:
+      tags:
+        - File
+      operationId: GetFileById
+      parameters:
+        - description: " "
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/result.ResponseSuccess"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/types.GetFileByIdResponse"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/result.ResponseError"
+components:
+  schemas:
+    result.ResponseError:
+      type: object
+      properties:
+        code:
+          type: string
+        msg:
+          type: string
+    result.ResponseSuccess:
+      type: object
+      properties:
+        code:
+          type: string
+        data: {}
+        msg:
+          type: string
+    types.DeleteFileRequest:
+      type: object
+      properties:
+        ids:
+          type: array
+          items:
+            type: string
+    types.DeleteFileResponse:
+      type: object
+    types.File:
+      type: object
+      properties:
+        created_at:
+          type: string
+        extension:
+          type: string
+        id:
+          type: string
+        name:
+          type: string
+        path:
+          type: string
+        size:
+          type: integer
+        type:
+          type: string
+        updated_at:
+          type: string
+    types.GetFileByIdResponse:
+      type: object
+      properties:
+        created_at:
+          type: string
+        extension:
+          type: string
+        id:
+          type: string
+        name:
+          type: string
+        path:
+          type: string
+        size:
+          type: integer
+        type:
+          type: string
+        updated_at:
+          type: string
+    types.GetFilesResponse:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/types.File"
+        meta:
+          type: object
+          properties:
+            item_count:
+              type: integer
+            limit:
+              type: integer
+            page:
+              type: integer
+            total_items:
+              type: integer
+            total_pages:
+              type: integer
+    types.UploadFileResponse:
+      type: object
+      properties:
+        created_at:
+          type: string
+        extension:
+          type: string
+        id:
+          type: string
+        name:
+          type: string
+        path:
+          type: string
+        size:
+          type: integer
+        type:
+          type: string
+        updated_at:
+          type: string

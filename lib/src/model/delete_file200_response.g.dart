@@ -1,0 +1,116 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'delete_file200_response.dart';
+
+// **************************************************************************
+// BuiltValueGenerator
+// **************************************************************************
+
+class _$DeleteFile200Response extends DeleteFile200Response {
+  @override
+  final String? code;
+  @override
+  final JsonObject? data;
+  @override
+  final String? msg;
+
+  factory _$DeleteFile200Response(
+          [void Function(DeleteFile200ResponseBuilder)? updates]) =>
+      (new DeleteFile200ResponseBuilder()..update(updates))._build();
+
+  _$DeleteFile200Response._({this.code, this.data, this.msg}) : super._();
+
+  @override
+  DeleteFile200Response rebuild(
+          void Function(DeleteFile200ResponseBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  DeleteFile200ResponseBuilder toBuilder() =>
+      new DeleteFile200ResponseBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is DeleteFile200Response &&
+        code == other.code &&
+        data == other.data &&
+        msg == other.msg;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, code.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jc(_$hash, msg.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'DeleteFile200Response')
+          ..add('code', code)
+          ..add('data', data)
+          ..add('msg', msg))
+        .toString();
+  }
+}
+
+class DeleteFile200ResponseBuilder
+    implements
+        Builder<DeleteFile200Response, DeleteFile200ResponseBuilder>,
+        ResultResponseSuccessBuilder {
+  _$DeleteFile200Response? _$v;
+
+  String? _code;
+  String? get code => _$this._code;
+  set code(covariant String? code) => _$this._code = code;
+
+  JsonObject? _data;
+  JsonObject? get data => _$this._data;
+  set data(covariant JsonObject? data) => _$this._data = data;
+
+  String? _msg;
+  String? get msg => _$this._msg;
+  set msg(covariant String? msg) => _$this._msg = msg;
+
+  DeleteFile200ResponseBuilder() {
+    DeleteFile200Response._defaults(this);
+  }
+
+  DeleteFile200ResponseBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _code = $v.code;
+      _data = $v.data;
+      _msg = $v.msg;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant DeleteFile200Response other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$DeleteFile200Response;
+  }
+
+  @override
+  void update(void Function(DeleteFile200ResponseBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  DeleteFile200Response build() => _build();
+
+  _$DeleteFile200Response _build() {
+    final _$result =
+        _$v ?? new _$DeleteFile200Response._(code: code, data: data, msg: msg);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

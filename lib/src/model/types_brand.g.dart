@@ -1,0 +1,153 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'types_brand.dart';
+
+// **************************************************************************
+// BuiltValueGenerator
+// **************************************************************************
+
+class _$TypesBrand extends TypesBrand {
+  @override
+  final String? createdAt;
+  @override
+  final String? description;
+  @override
+  final String? id;
+  @override
+  final String? image;
+  @override
+  final String? name;
+  @override
+  final String? updatedAt;
+
+  factory _$TypesBrand([void Function(TypesBrandBuilder)? updates]) =>
+      (new TypesBrandBuilder()..update(updates))._build();
+
+  _$TypesBrand._(
+      {this.createdAt,
+      this.description,
+      this.id,
+      this.image,
+      this.name,
+      this.updatedAt})
+      : super._();
+
+  @override
+  TypesBrand rebuild(void Function(TypesBrandBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  TypesBrandBuilder toBuilder() => new TypesBrandBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is TypesBrand &&
+        createdAt == other.createdAt &&
+        description == other.description &&
+        id == other.id &&
+        image == other.image &&
+        name == other.name &&
+        updatedAt == other.updatedAt;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, image.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, updatedAt.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'TypesBrand')
+          ..add('createdAt', createdAt)
+          ..add('description', description)
+          ..add('id', id)
+          ..add('image', image)
+          ..add('name', name)
+          ..add('updatedAt', updatedAt))
+        .toString();
+  }
+}
+
+class TypesBrandBuilder implements Builder<TypesBrand, TypesBrandBuilder> {
+  _$TypesBrand? _$v;
+
+  String? _createdAt;
+  String? get createdAt => _$this._createdAt;
+  set createdAt(String? createdAt) => _$this._createdAt = createdAt;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _image;
+  String? get image => _$this._image;
+  set image(String? image) => _$this._image = image;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _updatedAt;
+  String? get updatedAt => _$this._updatedAt;
+  set updatedAt(String? updatedAt) => _$this._updatedAt = updatedAt;
+
+  TypesBrandBuilder() {
+    TypesBrand._defaults(this);
+  }
+
+  TypesBrandBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _createdAt = $v.createdAt;
+      _description = $v.description;
+      _id = $v.id;
+      _image = $v.image;
+      _name = $v.name;
+      _updatedAt = $v.updatedAt;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(TypesBrand other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$TypesBrand;
+  }
+
+  @override
+  void update(void Function(TypesBrandBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  TypesBrand build() => _build();
+
+  _$TypesBrand _build() {
+    final _$result = _$v ??
+        new _$TypesBrand._(
+            createdAt: createdAt,
+            description: description,
+            id: id,
+            image: image,
+            name: name,
+            updatedAt: updatedAt);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

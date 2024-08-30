@@ -1,0 +1,4 @@
+include:
+    project: 'deployment/pipeline/ci-script'
+    ref: main
+    file: 'library-gitlab-ci.yml'
